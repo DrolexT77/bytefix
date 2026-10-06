@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ByteFix | Reparación de computadoras en San Mateo Tlacoxcalco, Puebla</title>
+  <meta name="description" content="Taller de reparación y mantenimiento de computadoras, redes y cámaras en San Mateo Tlacoxcalco, Puebla. Diagnóstico gratis, precios claros y cotización por WhatsApp.">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <!-- Tipografías (Fase 4, D-22): Baloo 2 para títulos y Atkinson Hyperlegible para texto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=Baloo+2:wght@600;700;800&amp;display=swap">
+  <!-- Bootstrap 5.3.8 (jsDelivr, con SRI) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!-- Estilos propios: se cargan después de Bootstrap (regla 7.4) -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Íconos de Bootstrap Icons 1.13.1 (MIT) como SVG en línea (D-25): sin fuente externa y funcionan sin servidor -->
+  <svg class="sprite-iconos" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icono-arrow-up" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/></symbol>
+    <symbol id="icono-book" viewBox="0 0 16 16"><path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/></symbol>
+    <symbol id="icono-box-arrow-up-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/> <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/></symbol>
+    <symbol id="icono-calendar-check" viewBox="0 0 16 16"><path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0"/> <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/></symbol>
+    <symbol id="icono-calendar3" viewBox="0 0 16 16"><path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857z"/> <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2m3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/></symbol>
+    <symbol id="icono-cash-coin" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8m5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0"/> <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195z"/> <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083q.088-.517.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1z"/> <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 6 6 0 0 1 3.13-1.567"/></symbol>
+    <symbol id="icono-check-circle" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/> <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05"/></symbol>
+    <symbol id="icono-clock" viewBox="0 0 16 16"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/> <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/></symbol>
+    <symbol id="icono-cpu" viewBox="0 0 16 16"><path d="M5 0a.5.5 0 0 1 .5.5V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2A2.5 2.5 0 0 1 14 4.5h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14a2.5 2.5 0 0 1-2.5 2.5v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14A2.5 2.5 0 0 1 2 11.5H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2A2.5 2.5 0 0 1 4.5 2V.5A.5.5 0 0 1 5 0m-.5 3A1.5 1.5 0 0 0 3 4.5v7A1.5 1.5 0 0 0 4.5 13h7a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 11.5 3zM5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5zM6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z"/></symbol>
+    <symbol id="icono-envelope" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/></symbol>
+    <symbol id="icono-exclamation-circle" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/> <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"/></symbol>
+    <symbol id="icono-facebook" viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/></symbol>
+    <symbol id="icono-geo-alt" viewBox="0 0 16 16"><path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/> <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/></symbol>
+    <symbol id="icono-hand-thumbs-up" viewBox="0 0 16 16"><path d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2 2 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a10 10 0 0 0-.443.05 9.4 9.4 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a9 9 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.2 2.2 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.9.9 0 0 1-.121.416c-.165.288-.503.56-1.066.56z"/></symbol>
+    <symbol id="icono-house-heart" viewBox="0 0 16 16"><path d="M8 6.982C9.664 5.309 13.825 8.236 8 12 2.175 8.236 6.336 5.309 8 6.982"/> <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.707L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.646a.5.5 0 0 0 .708-.707L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/></symbol>
+    <symbol id="icono-info-circle" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/> <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/></symbol>
+    <symbol id="icono-instagram" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></symbol>
+    <symbol id="icono-laptop" viewBox="0 0 16 16"><path d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5"/></symbol>
+    <symbol id="icono-lightning-charge" viewBox="0 0 16 16"><path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41z"/></symbol>
+    <symbol id="icono-list" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/></symbol>
+    <symbol id="icono-people" viewBox="0 0 16 16"><path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/></symbol>
+    <symbol id="icono-receipt" viewBox="0 0 16 16"><path d="M1.92.506a.5.5 0 0 1 .434.14L3 1.293l.646-.647a.5.5 0 0 1 .708 0L5 1.293l.646-.647a.5.5 0 0 1 .708 0L7 1.293l.646-.647a.5.5 0 0 1 .708 0L9 1.293l.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .801.13l.5 1A.5.5 0 0 1 15 2v12a.5.5 0 0 1-.053.224l-.5 1a.5.5 0 0 1-.8.13L13 14.707l-.646.647a.5.5 0 0 1-.708 0L11 14.707l-.646.647a.5.5 0 0 1-.708 0L9 14.707l-.646.647a.5.5 0 0 1-.708 0L7 14.707l-.646.647a.5.5 0 0 1-.708 0L5 14.707l-.646.647a.5.5 0 0 1-.708 0L3 14.707l-.646.647a.5.5 0 0 1-.801-.13l-.5-1A.5.5 0 0 1 1 14V2a.5.5 0 0 1 .053-.224l.5-1a.5.5 0 0 1 .367-.27m.217 1.338L2 2.118v11.764l.137.274.51-.51a.5.5 0 0 1 .707 0l.646.647.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.646.646.646-.646a.5.5 0 0 1 .708 0l.509.509.137-.274V2.118l-.137-.274-.51.51a.5.5 0 0 1-.707 0L12 1.707l-.646.647a.5.5 0 0 1-.708 0L10 1.707l-.646.647a.5.5 0 0 1-.708 0L8 1.707l-.646.647a.5.5 0 0 1-.708 0L6 1.707l-.646.647a.5.5 0 0 1-.708 0L4 1.707l-.646.647a.5.5 0 0 1-.708 0z"/> <path d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5m8-6a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5m0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5"/></symbol>
+    <symbol id="icono-router" viewBox="0 0 16 16"><path d="M5.525 3.025a3.5 3.5 0 0 1 4.95 0 .5.5 0 1 0 .707-.707 4.5 4.5 0 0 0-6.364 0 .5.5 0 0 0 .707.707"/> <path d="M6.94 4.44a1.5 1.5 0 0 1 2.12 0 .5.5 0 0 0 .708-.708 2.5 2.5 0 0 0-3.536 0 .5.5 0 0 0 .707.707ZM2.5 11a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m4.5-.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0m2.5.5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1m1.5-.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0m2 0a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0"/> <path d="M2.974 2.342a.5.5 0 1 0-.948.316L3.806 8H1.5A1.5 1.5 0 0 0 0 9.5v2A1.5 1.5 0 0 0 1.5 13H2a.5.5 0 0 0 .5.5h2A.5.5 0 0 0 5 13h6a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5h.5a1.5 1.5 0 0 0 1.5-1.5v-2A1.5 1.5 0 0 0 14.5 8h-2.306l1.78-5.342a.5.5 0 1 0-.948-.316L11.14 8H4.86zM14.5 9a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5z"/> <path d="M8.5 5.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0"/></symbol>
+    <symbol id="icono-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></symbol>
+    <symbol id="icono-shield-check" viewBox="0 0 16 16"><path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/> <path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"/></symbol>
+    <symbol id="icono-shield-lock" viewBox="0 0 16 16"><path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/> <path d="M9.5 6.5a1.5 1.5 0 0 1-1 1.415l.385 1.99a.5.5 0 0 1-.491.595h-.788a.5.5 0 0 1-.49-.595l.384-1.99a1.5 1.5 0 1 1 2-1.415"/></symbol>
+    <symbol id="icono-telephone" viewBox="0 0 16 16"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/></symbol>
+    <symbol id="icono-tiktok" viewBox="0 0 16 16"><path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/></symbol>
+    <symbol id="icono-usb-drive" viewBox="0 0 16 16"><path d="M6 .5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4H6zM7 1v1h1V1zm2 0v1h1V1zM6 5a1 1 0 0 0-1 1v8.5A1.5 1.5 0 0 0 6.5 16h4a1.5 1.5 0 0 0 1.5-1.5V6a1 1 0 0 0-1-1zm0 1h5v8.5a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5z"/></symbol>
+    <symbol id="icono-whatsapp" viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></symbol>
+    <symbol id="icono-x-lg" viewBox="0 0 16 16"><path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/></symbol>
+  </svg>
+  <a class="visually-hidden-focusable enlace-saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- Copia publicada en GitHub Pages: el número real está desactivado (D-26) -->
+  <!-- ===== SECCIÓN: Encabezado y navegación (RF-01) ===== -->
+  <header class="encabezado sticky-top">
+    <nav class="navbar navbar-expand-lg" aria-label="Menú principal">
+      <div class="container">
+        <!-- [DATO FICTICIO] S-18: logotipo propuesto por el agente (Fase 4) -->
+        <a class="navbar-brand" href="#inicio">
+          <img src="img/logo.svg" alt="ByteFix, ir al inicio" width="180" height="48">
+        </a>
+        <button class="navbar-toggler boton-menu" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menú">
+          <svg class="icono icono-abrir" aria-hidden="true"><use href="#icono-list"></use></svg>
+          <svg class="icono icono-cerrar" aria-hidden="true"><use href="#icono-x-lg"></use></svg>
+        </button>
+        <div class="collapse navbar-collapse" id="menu-principal">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="#promociones">Promociones</a></li>
+            <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          </ul>
+          <a class="btn btn-primary boton-pildora boton-menu-cta" href="https://wa.me/?text=Hola%20ByteFix%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar" target="_blank" rel="noopener"><svg class="icono" aria-hidden="true"><use href="#icono-whatsapp"></use></svg> <span class="d-lg-none d-xl-inline">Cotiza por WhatsApp</span><span class="d-none d-lg-inline d-xl-none">Cotiza<span class="visually-hidden"> por WhatsApp</span></span><span class="visually-hidden"> (se abre en otra pestaña)</span></a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ===== SECCIÓN: Inicio (RF-02) ===== -->
+    <section id="inicio" class="seccion seccion-inicio" aria-labelledby="titulo-inicio">
+      <div class="container">
+        <div class="row align-items-center g-4 g-lg-5">
+          <div class="col-12 col-lg-6">
+            <p class="frase-gancho">¿Tu laptop tarda más en prender que tú en despertar?</p>
+            <h1 id="titulo-inicio" class="titulo-principal">Reparación de computadoras en San Mateo Tlacoxcalco</h1>
+            <!-- [DATO FICTICIO] S-04: eslogan -->
+            <p class="eslogan">Tu equipo como nuevo, sin complicaciones. Reparamos laptops, PC, redes y cámaras aquí en tu comunidad.</p>
+            <div class="acciones-inicio">
+              <a class="btn btn-primary btn-lg boton-pildora" href="https://wa.me/?text=Hola%20ByteFix%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar" target="_blank" rel="noopener"><svg class="icono" aria-hidden="true"><use href="#icono-whatsapp"></use></svg> Cotiza por WhatsApp<span class="visually-hidden"> (se abre en otra pestaña)</span></a>
+              <a class="btn btn-outline-primary btn-lg boton-pildora" href="#servicios">Ver servicios y precios</a>
+            </div>
+            <!-- [DATO FICTICIO] S-09: beneficios -->
+            <ul class="lista-beneficios row row-cols-1 row-cols-md-2 g-3">
+              <li class="col"><span class="icono-circulo"><svg class="icono" aria-hidden="true"><use href="#icono-house-heart"></use></svg></span> En tu comunidad, sin viajar a Tehuacán</li>
+              <li class="col"><span class="icono-circulo"><svg class="icono" aria-hidden="true"><use href="#icono-search"></use></svg></span> Diagnóstico gratis</li>
+              <li class="col"><span class="icono-circulo"><svg class="icono" aria-hidden="true"><use href="#icono-lightning-charge"></use></svg></span> Entrega en 24 a 72 horas</li>
+              <li class="col"><span class="icono-circulo"><svg class="icono" aria-hidden="true"><use href="#icono-cash-coin"></use></svg></span> Precios claros antes de reparar</li>
+            </ul>
+          </div>
+          <div class="col-12 col-lg-6">
+            <!-- Imagen ilustrativa de Unsplash (S-19): Revendo, https://unsplash.com/photos/KhnRiIAgvsI -->
+            <figure class="figura-inicio">
+              <img class="img-fluid" src="img/inicio-tecnico-reparando-laptop.webp" alt="Manos de un técnico trabajando con herramientas de precisión dentro de una laptop abierta" width="1200" height="800" fetchpriority="high">
+              <figcaption>Imagen ilustrativa</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECCIÓN: Servicios y precios (RF-04, RF-13, RF-18) ===== -->
+    <section id="servicios" class="seccion seccion-alterna" aria-labelledby="titulo-servicios">
+      <div class="container">
+        <div class="encabezado-seccion">
+          <h2 id="titulo-servicios" class="titulo-seccion">Servicios y precios</h2>
+          <p class="frase-seccion">Precios claros antes de dejar tu equipo. ¿No sabes qué tiene? Revisarlo no te cuesta.</p>
+        </div>
+        <!-- [DATO FICTICIO] S-11, S-12: servicios, descripciones y precios propuestos (D1–D16) -->
+        <article class="aviso-diagnostico" aria-labelledby="titulo-diagnostico">
+          <div>
+            <h3 id="titulo-diagnostico"><svg class="icono" aria-hidden="true"><use href="#icono-search"></use></svg> Diagnóstico gratis</h3>
+            <p>Revisamos tu equipo y te mandamos el presupuesto por WhatsApp antes de reparar. Solo pagas si aceptas la reparación.</p>
+          </div>
+          <div class="acciones-aviso">
+            <p class="precio mb-0">Gratis</p>
+            <a class="btn btn-primary boton-pildora" href="https://wa.me/?text=Hola%20ByteFix%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%3A%20Diagn%C3%B3stico%20gratis" target="_blank" rel="noopener">Pide tu diagnóstico<span class="visually-hidden"> gratis por WhatsApp (se abre en otra pestaña)</span></a>
+            <a href="#contacto">o llena el formulario</a>
+          </div>
+        </article>
+
+        <div class="filtro-catalogo" role="group" aria-label="Filtrar el catálogo por categoría" hidden>
+          <button type="button" class="btn btn-outline-primary boton-pildora boton-filtro" data-filtro="todos" aria-pressed="true">Todos</button>
+          <button type="button" class="btn btn-outline-primary boton-pildora boton-filtro" data-filtro="software" aria-pressed="false">Software</button>
+          <button type="button" class="btn btn-outline-primary boton-pildora boton-filtro" data-filtro="hardware" aria-pressed="false">Hardware</button>
+          <button type="button" class="btn btn-outline-primary boton-pildora boton-filtro" data-filtro="redes" aria-pressed="false">Redes y cámaras</button>
+          <button type="button" class="btn btn-outline-primary boton-pildora boton-filtro" data-filtro="accesorios" aria-pressed="false">Accesorios</button>
+        </div>
+        <p class="contador-servicios" aria-live="polite" hidden></p>
+
+        <div class="categoria-catalogo" data-categoria="software">
+          <h3 class="titulo-categoria"><span class="icono-circulo"><svg class="icono" aria-hidden="true"><use href="#icono-laptop"></use></svg></span> Software</h3>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+            <div class="col">
+              <article class="card h-100 tarjeta-servicio">
+                <div class="card-body">
+                  <span class="etiqueta-categoria">Software</span>
+                  <h4 class="card-title">Formateo e instalación de Windows</h4>
+                  <p class="descripcion-servicio">Instalación limpia de Windows con controladores y programas básicos. Antes respaldamos hasta 50 GB de tus archivos.</p>
+                </div>
+                <div class="card-footer">
+                  <p class="precio">$350.00 MXN</p>
+                  <a class="btn btn-outline-primary boton-pildora" href="https://wa.me/?text=Hola%20ByteFix%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%3A%20Formateo%20e%20instalaci%C3%B3n%20de%20Windows" target="_blank" rel="noopener">Cotizar<span class="visually-hidden"> Formateo e instalación de Windows por WhatsApp (se abre en otra pestaña)</span></a>
+                </div>
+              </article>
+            </div>
+            <div class="col">
+              <article class="card h-100 tarjeta-servicio">
+                <div class="card-body">
+                  <span class="etiqueta-categoria">Software</span>
+                  <h4 class="card-title">Eliminación de virus y optimización</h4>
+                  <p class="descripcion-servicio">Quitamos virus y programas maliciosos, limpiamos lo que se abre al prender y ajustamos tu equipo para que vaya más rápido.</p>
+                </div>
+                <div class="card-footer">
+                  <p class="precio">$250.00 MXN</p>
+                  <a class="btn btn-outline-primary boton-pildora" href="https://wa.me/?text=Hola%20ByteFix%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%3A%20Eliminaci%C3%B3n%20de%20virus%20y%20optimizaci%C3%B3n" target="_blank" rel="noopener">Cotizar<span class="visually-hidden"> Eliminación de virus y optimización por WhatsApp (se abre en otra pestaña)</span></a>
+                </div>
+              </article>
+            </div>
+            <div class="col">
+              <article class="card h-100 tarjeta-servicio">
+                <div class="card-body">
+                  <span class="etiqueta-categoria">Software</span>
+                  <h4 class="card-title">Instalación de programas</h4>
+                  <p class="descripcion-servicio">Paquetería de oficina, antivirus y programas para la escuela, con tu licencia o con software libre (gratuito y legal).</p>
+                </div>
+                <div class="card-footer">
+                  <p class="precio">desde $100.00 MXN</p>
+                  <a class="btn btn-outline-primary boton-pildora" href="https://wa.me/?text=Hola%20ByteFix%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%3A%20Instalaci%C3%B3n%20de%20programas" target="_blank" rel="noopener">Cotizar<span class="visually-hidden"> Instalación de programas por WhatsApp (se abre en otra pestaña)</span></a>
+                </div>
+              </article>
+            </div>
+            <div class="col">
+              <article class="card h-100 tarjeta-servicio">
+                <div class="card-body">
+                  <span class="etiqueta-categoria">Software</span>
+                  <h4 class="card-title">Respaldo y recuperación de información</h4>
+                  <p class="descripcion-servicio">Copiamos tus archivos a una USB o a la nube. Si borraste algo, intentamos recuperarlo según el caso.</p>
+                </div>
+                <div class="card-footer">
+                  <p class="precio">desde $200.00 MXN</p>
+                  <a class="btn btn-outline-primary boton-pildora" href="https://wa.me/?text=Hola%20ByteFix%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%3A%20Respaldo%20y%20recuperaci%C3%B3n%20de%20informaci%C3%B3n" target="_blank" rel="noopener">Cotizar<span class="visually-hidden"> Respaldo y recuperación de información por WhatsApp (se abre en otra pestaña)</span></a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="categoria-catalogo" data-categoria="hardware">
+          <h3 class="titulo-categoria"><span class="icono-circulo"><svg class="icono" aria-hidden="true"><use href="#icono-cpu"></use></svg></span> Hardware</h3>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+            <div class="col">
+              <article class="card h-100 tarjeta-servicio">
+                <div class="card-body">
+                  <span class="etiqueta-categoria">Hardware</span>
+                  <h4 class="card-title">Mantenimiento preventivo</h4>
+                  <p class="descripcion-servicio">Limpieza por dentro, cambio de pasta térmica (la que ayuda a que tu equipo no se caliente) y revisión general.</p>
+                  <p class="nota-negocios"><a href="#promo-negocio-sin-pausas">¿Tienes un negocio? 20 % de descuento desde 3 equipos</a></p>
+                </div>
+                <div class="card-footer">
+                  <p class="precio">$400.00 MXN <span class="precio-extra">laptop</span></p>
+                  <p class="precio">$350.00 MXN <span class="precio-extra">PC</span></p>
+                  <a class="btn btn-outline-primary boton-pildora" href="https://wa.me/?text=Hola%20ByteFix%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%3A%20Mantenimiento%20preventivo" target="_blank" rel="noopener">Cotizar<span class="visually-hidden"> Mantenimiento preventivo por WhatsApp (se abre en otra pestaña)</span></a>
+                </div>
+              </article>
+            </div>
+            <div class="col">
+              <article class="card h-100 tarjeta-servicio">
+                <div class="card-body">
+                  <span class="etiqueta-categoria">Hardware</span>
+                  <h4 class="card-title">Cambio a SSD</h4>
+                  <p class="descripcion-servicio">Un SSD es un disco mucho más rápido: lo instalamos y pasamos tu sistema para que tu equipo prenda en segundos.</p>
+                </div>
+                <div class="card-footer">
+                  <p class="precio">$300.00 MXN <span class="precio-extra">+ SSD</span></p>
+                  <a class="btn btn-outline-primary boton-pildora" href="https://wa.me/?text=Hola%20ByteFix%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%3A%20Cambio%20a%20SSD" target="_blank" rel="noopener">Cotizar<span class="visually-hidden"> Cambio a SSD por WhatsApp (se abre en otra pestaña)</span></a>
+                </div>
+              </article>
+            </div>
+            <div class="col">
+              <article class="card h-100 tarjeta-servicio">
+                <div class="card-body">
+                  <span class="etiqueta-categoria">Hardware</span>
+                  <h4 class="card-title">Aumento de memoria RAM</h4>
+                  <p class="descripcion-servicio">La memoria RAM ayuda a abrir varios programas a la vez sin que se trabe. Instalamos y probamos memoria compatible.</p>
+                </div>
+                <div class="card-footer">
+                  <p class="precio">$100.00 MXN <span class="precio-extra">+ memoria</span></p>
+                  <a class="btn btn-outline-primary boton-pildora" href="https://wa.me/?text=Hola%20ByteFix%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%3A%20Aumento%20de%20memoria%20RAM" target="_blank" rel="noopener">Cotizar<span class="visually-hidden"> Aumento de memoria RAM por WhatsApp (se abre en otra pestaña)</span></a>
+                </div>
+              </article>
+            </div>
+            <div class="col">
+              <article class="card h-100 tarjeta-servicio">
+                <div class="card-body">
+                  <span class="etiqueta-categoria">Hardware</span>
+                  <h4 class="card-title">Cambio de pantalla o teclado de laptop</h4>
+                  <p class="descripcion-servicio">Cobramos la mano de obra; la refacción se cotiza según el modelo de tu laptop.</p>
+                </div>
+                <div class="card-footer">
+                  <p class="precio">desde $250.00 MXN <span class="precio-extra">+ refacción</span></p>
+                  <a class="btn btn-outline-primary boton-pildora" href="https://wa.me/?text=Hola%20ByteFix%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%3A%20Cambio%20de%20pantalla%20o%20teclado%20de%20laptop" target="_blank" rel="noopener">Cotizar<span class="visually-hidden"> Cambio de pantalla o teclado de laptop por WhatsApp (se abre en otra pestaña)</span></a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="categoria-catalogo" data-categoria="redes">
+          <h3 class="titulo-categoria"><span class="icono-circulo"><svg class="icono" aria-hidden="true"><use href="#icono-router"></use></svg></span> Redes y cámaras</h3>
+          <p class="nota-categoria"><svg class="icono" aria-hidden="true"><use href="#icono-info-circle"></use></svg> La instalación de redes y cámaras es en tu casa o negocio, con cita. La configuración de tu módem se hace en el taller.</p>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+            <div class="col">
+              <article class="card h-100 tarjeta-servicio">
+                <div class="card-body">
+                  <span class="etiqueta-categoria">Redes y cámaras</span>
+                  <h4 class="card-title">Configuración de módem y WiFi</h4>
+                  <p class="descripcion-servicio">Contraseña segura, red para invitados y control parental para cuidar lo que ven tus hijos en internet. Tú traes tu módem.</p>
+                </div>
+                <div class="card-footer">
+                  <p class="precio">$250.00 MXN</p>
+                  <a class="btn btn-outline-primary boton-pildora" href="https://wa.me/?text=Hola%20ByteFix%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%3A%20Configuraci%C3%B3n%20de%20m%C3%B3dem%20y%20WiFi" target="_blank" rel="noopener">Cotizar<span class="visually-hidden"> Configuración de módem y WiFi por WhatsApp (se abre en otra pestaña)</span></a>
+                </div>
+              </article>
+            </div>
+            <div class="col">
+              <article class="card h-100 tarjeta-servicio">
+                <div class="card-body">
+                  <span class="etiqueta-categoria">Redes y cámaras</span>
+                  <h4 class="card-title">Instalación de cámaras de vigilancia</h4>
+                  <p class="descripcion-servicio">Vamos a tu casa o negocio con cita, instalamos y configuramos todo para que veas tus cámaras desde el celular.</p>
+                </div>
+                <div class="card-footer">
+                  <p class="precio">desde $450.00 MXN <span class="precio-extra">por cámara</span></p>
+                  <a class="btn btn-outline-primary boton-pildora" href="https://wa.me/?text=Hola%20ByteFix%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%3A%20Instalaci%C3%B3n%20de%20c%C3%A1maras%20de%20vigilancia" target="_blank" rel="noopener">Cotizar<span class="visually-hidden"> Instalación de cámaras de vigilancia por WhatsApp (se abre en otra pestaña)</span></a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="categoria-catalogo" data-categoria="accesorios">
+          <h3 class="titulo-categoria"><span class="icono-circulo"><svg class="icono" aria-hidden="true"><use href="#icono-usb-drive"></use></svg></span> Accesorios</h3>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+            <div class="col">
+              <article class="card h-100 tarjeta-servicio">
+                <div class="card-body">
+                  <span class="etiqueta-categoria">Accesorios</span>
+                  <h4 class="card-title">SSD 480 GB</h4>
+                  <p class="descripcion-servicio">Unidad de estado sólido SATA: el disco rápido ideal para revivir tu laptop o tu PC.</p>
+                </div>
+                <div class="card-footer">
+                  <p class="precio">$650.00 MXN</p>
+                  <a class="btn btn-outline-primary boton-pildora" href="https://wa.me/?text=Hola%20ByteFix%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%3A%20SSD%20480%20GB" target="_blank" rel="noopener">Cotizar<span class="visually-hidden"> SSD 480 GB por WhatsApp (se abre en otra pestaña)</span></a>
+                </div>
+              </article>
+            </div>
+            <div class="col">
+              <article class="card h-100 tarjeta-servicio">
+                <div class="card-body">
+                  <span class="etiqueta-categoria">Accesorios</span>
+                  <h4 class="card-title">Memoria USB 64 GB</h4>
+                  <p class="descripcion-servicio">USB 3.0 para guardar tus tareas, fotos y respaldos.</p>
+                </div>
+                <div class="card-footer">
+                  <p class="precio">$120.00 MXN</p>
+                  <a class="btn btn-outline-primary boton-pildora" href="https://wa.me/?text=Hola%20ByteFix%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%3A%20Memoria%20USB%2064%20GB" target="_blank" rel="noopener">Cotizar<span class="visually-hidden"> Memoria USB 64 GB por WhatsApp (se abre en otra pestaña)</span></a>
+                </div>
+              </article>
+            </div>
+            <div class="col">
+              <article class="card h-100 tarjeta-servicio">
+                <div class="card-body">
+                  <span class="etiqueta-categoria">Accesorios</span>
+                  <h4 class="card-title">Mouse y teclados</h4>
+                  <p class="descripcion-servicio">Alámbricos e inalámbricos, para la escuela, la casa o el negocio.</p>
+                </div>
+                <div class="card-footer">
+                  <p class="precio">desde $150.00 MXN</p>
+                  <a class="btn btn-outline-primary boton-pildora" href="https://wa.me/?text=Hola%20ByteFix%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%3A%20Mouse%20y%20teclados" target="_blank" rel="noopener">Cotizar<span class="visually-hidden"> Mouse y teclados por WhatsApp (se abre en otra pestaña)</span></a>
+                </div>
+              </article>
+            </div>
+            <div class="col">
+              <article class="card h-100 tarjeta-servicio">
+                <div class="card-body">
+                  <span class="etiqueta-categoria">Accesorios</span>
+                  <h4 class="card-title">Cargadores para laptop</h4>
+                  <p class="descripcion-servicio">Universales y por modelo; dinos la marca y el modelo de tu laptop.</p>
+                </div>
+                <div class="card-footer">
+                  <p class="precio">desde $450.00 MXN</p>
+                  <a class="btn btn-outline-primary boton-pildora" href="https://wa.me/?text=Hola%20ByteFix%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%3A%20Cargadores%20para%20laptop" target="_blank" rel="noopener">Cotizar<span class="visually-hidden"> Cargadores para laptop por WhatsApp (se abre en otra pestaña)</span></a>
+                </div>
+              </article>
+            </div>
+            <div class="col">
+              <article class="card h-100 tarjeta-servicio">
+                <div class="card-body">
+                  <span class="etiqueta-categoria">Accesorios</span>
+                  <h4 class="card-title">Laptops reacondicionadas</h4>
+                  <p class="descripcion-servicio">Revisadas por nosotros, con SSD y garantía de 3 meses.</p>
+                </div>
+                <div class="card-footer">
+                  <p class="precio">desde $4,500.00 MXN</p>
+                  <a class="btn btn-outline-primary boton-pildora" href="https://wa.me/?text=Hola%20ByteFix%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar%3A%20Laptops%20reacondicionadas" target="_blank" rel="noopener">Cotizar<span class="visually-hidden"> Laptops reacondicionadas por WhatsApp (se abre en otra pestaña)</span></a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <p class="nota-precios">Precios en pesos mexicanos (MXN), sujetos a cambio. Las refacciones se cotizan según el modelo de tu equipo.</p>
+      </div>
+    </section>
+
+    <!-- ===== SECCIÓN: Promociones e información relevante (RF-06, RF-14) ===== -->
+    <section id="promociones" class="seccion" aria-labelledby="titulo-promociones">
+      <div class="container">
+        <div class="encabezado-seccion">
+          <h2 id="titulo-promociones" class="titulo-seccion">Promociones</h2>
+          <p class="frase-seccion">Ahorra en tu próxima visita.</p>
+        </div>
+        <!-- [DATO FICTICIO] S-13: promociones, condiciones y vigencias (E1–E5). Estado escrito al 2026-10-05; JS-7 lo recalcula -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
+          <div class="col">
+            <article class="card h-100 tarjeta-promocion" id="promo-paquete-estudiante" data-inicio="2026-10-01" data-fin="2026-12-31" aria-labelledby="titulo-promo-paquete-estudiante">
+              <div class="card-body">
+                <span class="badge estado-promocion estado-vigente">Vigente</span>
+                <h3 class="card-title" id="titulo-promo-paquete-estudiante">Paquete Estudiante</h3>
+                <p>Formateo + mantenimiento preventivo + respaldo de tu información, todo junto.</p>
+                <p class="precio">$650.00 MXN</p>
+                <p class="precio-anterior">antes <del>$950.00 MXN</del></p>
+                <p class="condiciones">Con credencial escolar vigente.</p>
+                <p class="vigencia"><svg class="icono" aria-hidden="true"><use href="#icono-calendar-check"></use></svg> <span>Del <time datetime="2026-10-01">1 de octubre</time> al <time datetime="2026-12-31">31 de diciembre de 2026</time></span></p>
+              </div>
+              <div class="card-footer">
+                <a class="btn btn-outline-primary boton-pildora" href="https://wa.me/?text=Hola%20ByteFix%2C%20vi%20su%20p%C3%A1gina%20y%20me%20interesa%20la%20promoci%C3%B3n%20Paquete%20Estudiante" target="_blank" rel="noopener">La quiero<span class="visually-hidden">: Paquete Estudiante por WhatsApp (se abre en otra pestaña)</span></a>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card h-100 tarjeta-promocion" id="promo-negocio-sin-pausas" data-inicio="2026-10-01" data-fin="2026-11-30" aria-labelledby="titulo-promo-negocio-sin-pausas">
+              <div class="card-body">
+                <span class="badge estado-promocion estado-vigente">Vigente</span>
+                <h3 class="card-title" id="titulo-promo-negocio-sin-pausas">Negocio sin pausas</h3>
+                <p>20 % de descuento en mantenimiento preventivo a partir de 3 equipos. Por ejemplo, 3 laptops pasan de $1,200.00 a $960.00 MXN.</p>
+                <p class="precio">20 % de descuento</p>
+                <p class="condiciones">Desde 3 equipos. Factura disponible.</p>
+                <p class="vigencia"><svg class="icono" aria-hidden="true"><use href="#icono-calendar-check"></use></svg> <span>Del <time datetime="2026-10-01">1 de octubre</time> al <time datetime="2026-11-30">30 de noviembre de 2026</time></span></p>
+              </div>
+              <div class="card-footer">
+                <a class="btn btn-outline-primary boton-pildora" href="https://wa.me/?text=Hola%20ByteFix%2C%20vi%20su%20p%C3%A1gina%20y%20me%20interesa%20la%20promoci%C3%B3n%20Negocio%20sin%20pausas" target="_blank" rel="noopener">La quiero<span class="visually-hidden">: Negocio sin pausas por WhatsApp (se abre en otra pestaña)</span></a>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card h-100 tarjeta-promocion" id="promo-diagnostico-gratis" aria-labelledby="titulo-promo-diagnostico-gratis">
+              <div class="card-body">
+                <span class="badge estado-promocion estado-vigente">Vigente</span>
+                <h3 class="card-title" id="titulo-promo-diagnostico-gratis">Diagnóstico gratis</h3>
+                <p>Revisión y presupuesto sin costo: solo pagas si aceptas la reparación.</p>
+                <p class="precio">Gratis</p>
+                <p class="condiciones">Para cualquier equipo que traigas al taller.</p>
+                <p class="vigencia"><svg class="icono" aria-hidden="true"><use href="#icono-calendar-check"></use></svg> <span>Promoción permanente</span></p>
+              </div>
+              <div class="card-footer">
+                <a class="btn btn-outline-primary boton-pildora" href="https://wa.me/?text=Hola%20ByteFix%2C%20vi%20su%20p%C3%A1gina%20y%20me%20interesa%20la%20promoci%C3%B3n%20Diagn%C3%B3stico%20gratis" target="_blank" rel="noopener">La quiero<span class="visually-hidden">: Diagnóstico gratis por WhatsApp (se abre en otra pestaña)</span></a>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card h-100 tarjeta-promocion" id="promo-upgrade-ssd" data-inicio="2026-11-01" data-fin="2026-11-30" aria-labelledby="titulo-promo-upgrade-ssd">
+              <div class="card-body">
+                <span class="badge estado-promocion estado-proximamente">Próximamente</span>
+                <h3 class="card-title" id="titulo-promo-upgrade-ssd">Upgrade SSD</h3>
+                <p>SSD de 480 GB instalado y con tu sistema clonado, para que tu equipo prenda en segundos.</p>
+                <p class="precio">$849.00 MXN</p>
+                <p class="precio-anterior">antes <del>$950.00 MXN</del></p>
+                <p class="condiciones">Incluye el SSD y la mano de obra.</p>
+                <p class="vigencia"><svg class="icono" aria-hidden="true"><use href="#icono-calendar-check"></use></svg> <span>Del <time datetime="2026-11-01">1</time> al <time datetime="2026-11-30">30 de noviembre de 2026</time></span></p>
+              </div>
+              <div class="card-footer">
+                <a class="btn btn-outline-primary boton-pildora" href="https://wa.me/?text=Hola%20ByteFix%2C%20vi%20su%20p%C3%A1gina%20y%20me%20interesa%20la%20promoci%C3%B3n%20Upgrade%20SSD" target="_blank" rel="noopener">La quiero<span class="visually-hidden">: Upgrade SSD por WhatsApp (se abre en otra pestaña)</span></a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- [DATO FICTICIO] S-09, S-13: información relevante (E5). El acordeón se escribe abierto y JS lo compacta -->
+        <div class="row justify-content-center bloque-info">
+          <div class="col-12 col-lg-8">
+            <h3 id="titulo-info">Información importante</h3>
+            <div class="accordion acordeon-info" id="acordeon-info">
+              <div class="accordion-item">
+                <h4 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#info-garantia" aria-expanded="true" aria-controls="info-garantia"><svg class="icono" aria-hidden="true"><use href="#icono-shield-check"></use></svg> Garantía de 30 días</button>
+                </h4>
+                <div id="info-garantia" class="accordion-collapse collapse show">
+                  <div class="accordion-body">Tu reparación tiene 30 días de garantía en mano de obra: si la misma falla regresa en ese tiempo, la revisamos sin cobrarte la mano de obra.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h4 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#info-entrega" aria-expanded="true" aria-controls="info-entrega"><svg class="icono" aria-hidden="true"><use href="#icono-clock"></use></svg> Entrega en 24 a 72 horas</button>
+                </h4>
+                <div id="info-entrega" class="accordion-collapse collapse show">
+                  <div class="accordion-body">La mayoría de los servicios quedan listos en 24 a 72 horas, según el servicio. El tiempo exacto te lo decimos junto con tu presupuesto.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h4 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#info-factura" aria-expanded="true" aria-controls="info-factura"><svg class="icono" aria-hidden="true"><use href="#icono-receipt"></use></svg> Factura disponible</button>
+                </h4>
+                <div id="info-factura" class="accordion-collapse collapse show">
+                  <div class="accordion-body">¿Tienes un negocio? Te damos factura; pídela cuando dejes tu equipo.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h4 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#info-precios" aria-expanded="true" aria-controls="info-precios"><svg class="icono" aria-hidden="true"><use href="#icono-cash-coin"></use></svg> Precios sujetos a cambio</button>
+                </h4>
+                <div id="info-precios" class="accordion-collapse collapse show">
+                  <div class="accordion-body">Los precios están en pesos mexicanos (MXN) y pueden cambiar. Las refacciones, el SSD y la memoria se cotizan aparte según tu equipo.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECCIÓN: Nosotros (RF-03) ===== -->
+    <section id="nosotros" class="seccion seccion-alterna" aria-labelledby="titulo-nosotros">
+      <div class="container">
+        <div class="encabezado-seccion">
+          <h2 id="titulo-nosotros" class="titulo-seccion">¿Quiénes somos?</h2>
+          <p class="frase-seccion">Somos de aquí, de San Mateo Tlacoxcalco, y sabemos lo que cuesta viajar a Tehuacán para arreglar una computadora.</p>
+        </div>
+        <div class="row g-4 g-lg-5 align-items-start">
+          <div class="col-12 col-lg-6">
+            <!-- [DATO FICTICIO] S-02, S-05, S-06: historia, años y tamaño del equipo -->
+            <h3>Nuestra historia</h3>
+            <p>Somos dos jóvenes de la comunidad, egresados de una carrera de TI. Empezamos reparando las laptops de nuestros compañeros y vecinos, y como para cualquier reparación había que viajar a Tehuacán, en 2022 abrimos nuestro taller en San Mateo Tlacoxcalco. Hoy atendemos a estudiantes y negocios de toda la zona.</p>
+            <ul class="datos-rapidos">
+              <li class="dato-rapido"><svg class="icono" aria-hidden="true"><use href="#icono-calendar3"></use></svg> Desde 2022</li>
+              <li class="dato-rapido"><svg class="icono" aria-hidden="true"><use href="#icono-people"></use></svg> 2 técnicos y 1 persona en mostrador</li>
+              <li class="dato-rapido"><svg class="icono" aria-hidden="true"><use href="#icono-shield-check"></use></svg> 30 días de garantía</li>
+            </ul>
+          </div>
+          <div class="col-12 col-lg-6">
+            <!-- [DATO FICTICIO] S-07: misión y visión -->
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+              <div class="col">
+                <article class="card h-100 tarjeta-filosofia">
+                  <div class="card-body">
+                    <h3 class="card-title">Misión</h3>
+                    <p class="card-text">Mantener funcionando los equipos de estudiantes y pequeños negocios de San Mateo Tlacoxcalco y la región con servicio técnico rápido, honesto y a precio justo, explicando cada reparación en palabras simples.</p>
+                  </div>
+                </article>
+              </div>
+              <div class="col">
+                <article class="card h-100 tarjeta-filosofia">
+                  <div class="card-body">
+                    <h3 class="card-title">Visión</h3>
+                    <p class="card-text">Ser en 2030 el taller de cómputo de confianza de la región de San José Miahuatlán para estudiantes y negocios, reconocido por su rapidez y transparencia.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- [DATO FICTICIO] S-08: valores -->
+        <h3 class="subtitulo-nosotros">Valores</h3>
+        <ul class="lista-valores row row-cols-1 row-cols-md-2 row-cols-lg-5 g-3">
+          <li class="col">
+            <div class="valor"><span class="icono-circulo"><svg class="icono" aria-hidden="true"><use href="#icono-hand-thumbs-up"></use></svg></span><strong>Honestidad</strong><span>Te damos el presupuesto antes de reparar.</span></div>
+          </li>
+          <li class="col">
+            <div class="valor"><span class="icono-circulo"><svg class="icono" aria-hidden="true"><use href="#icono-lightning-charge"></use></svg></span><strong>Rapidez</strong><span>Tu equipo listo en 24 a 72 horas.</span></div>
+          </li>
+          <li class="col">
+            <div class="valor"><span class="icono-circulo"><svg class="icono" aria-hidden="true"><use href="#icono-shield-lock"></use></svg></span><strong>Cuidado de tu información</strong><span>Respaldamos tus archivos y no los revisamos.</span></div>
+          </li>
+          <li class="col">
+            <div class="valor"><span class="icono-circulo"><svg class="icono" aria-hidden="true"><use href="#icono-cash-coin"></use></svg></span><strong>Precio justo</strong><span>Precios publicados, sin sorpresas.</span></div>
+          </li>
+          <li class="col">
+            <div class="valor"><span class="icono-circulo"><svg class="icono" aria-hidden="true"><use href="#icono-book"></use></svg></span><strong>Aprendizaje continuo</strong><span>Nos actualizamos para atender equipos nuevos.</span></div>
+          </li>
+        </ul>
+
+        <!-- [DATO FICTICIO] S-09: diferenciadores -->
+        <h3 class="subtitulo-nosotros">¿Por qué elegirnos?</h3>
+        <ul class="lista-diferenciadores row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
+          <li class="col"><svg class="icono" aria-hidden="true"><use href="#icono-check-circle"></use></svg> <span>Servicio en tu comunidad, sin viajar a Tehuacán</span></li>
+          <li class="col"><svg class="icono" aria-hidden="true"><use href="#icono-check-circle"></use></svg> <span>Diagnóstico gratis</span></li>
+          <li class="col"><svg class="icono" aria-hidden="true"><use href="#icono-check-circle"></use></svg> <span>Presupuesto por WhatsApp antes de reparar</span></li>
+          <li class="col"><svg class="icono" aria-hidden="true"><use href="#icono-check-circle"></use></svg> <span>Precios publicados</span></li>
+          <li class="col"><svg class="icono" aria-hidden="true"><use href="#icono-check-circle"></use></svg> <span>Respaldo de tu información antes de formatear</span></li>
+          <li class="col"><svg class="icono" aria-hidden="true"><use href="#icono-check-circle"></use></svg> <span>Garantía de 30 días</span></li>
+          <li class="col"><svg class="icono" aria-hidden="true"><use href="#icono-check-circle"></use></svg> <span>Entrega en 24 a 72 horas</span></li>
+          <li class="col"><svg class="icono" aria-hidden="true"><use href="#icono-check-circle"></use></svg> <span>Factura disponible para negocios</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== SECCIÓN: Galería (RF-05) ===== -->
+    <section id="galeria" class="seccion" aria-labelledby="titulo-galeria">
+      <div class="container">
+        <div class="encabezado-seccion">
+          <h2 id="titulo-galeria" class="titulo-seccion">Galería</h2>
+          <p class="frase-seccion">Así cuidamos tu equipo. Las fotos son imágenes ilustrativas.</p>
+        </div>
+        <!-- Imágenes ilustrativas de Unsplash (S-19, D-14): el crédito de cada una va en su figcaption -->
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3 g-lg-4">
+          <div class="col">
+            <figure class="figura-galeria">
+              <a class="enlace-galeria" href="img/galeria-01-taller.webp" data-titulo="Mesa de trabajo del taller" data-credito="Foto: Albert Vinas / Unsplash · imagen ilustrativa">
+                <img class="img-fluid" src="img/galeria-01-taller.webp" alt="Laptop abierta sobre una mesa de trabajo de madera mientras un técnico retira una pieza" width="800" height="600" loading="lazy">
+                <span class="visually-hidden"> (ampliar imagen)</span>
+              </a>
+              <figcaption>Mesa de trabajo del taller <span class="credito-foto">Foto: Albert Vinas / Unsplash · imagen ilustrativa</span></figcaption>
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="figura-galeria">
+              <a class="enlace-galeria" href="img/galeria-02-limpieza-interna.webp" data-titulo="Limpieza interna de laptop" data-credito="Foto: Andrey Matveev / Unsplash · imagen ilustrativa">
+                <img class="img-fluid" src="img/galeria-02-limpieza-interna.webp" alt="Interior de una laptop con sus dos ventiladores y los tubos de cobre del disipador a la vista" width="800" height="600" loading="lazy">
+                <span class="visually-hidden"> (ampliar imagen)</span>
+              </a>
+              <figcaption>Limpieza interna de laptop <span class="credito-foto">Foto: Andrey Matveev / Unsplash · imagen ilustrativa</span></figcaption>
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="figura-galeria">
+              <a class="enlace-galeria" href="img/galeria-03-pasta-termica.webp" data-titulo="Pasta térmica y herramientas" data-credito="Foto: Andrey Matveev / Unsplash · imagen ilustrativa">
+                <img class="img-fluid" src="img/galeria-03-pasta-termica.webp" alt="Jeringa de pasta térmica, destornillador y soportes acomodados sobre la mesa de trabajo" width="800" height="600" loading="lazy">
+                <span class="visually-hidden"> (ampliar imagen)</span>
+              </a>
+              <figcaption>Pasta térmica y herramientas <span class="credito-foto">Foto: Andrey Matveev / Unsplash · imagen ilustrativa</span></figcaption>
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="figura-galeria">
+              <a class="enlace-galeria" href="img/galeria-04-cambio-ssd.webp" data-titulo="Cambio a SSD" data-credito="Foto: Samsung Memory / Unsplash · imagen ilustrativa">
+                <img class="img-fluid" src="img/galeria-04-cambio-ssd.webp" alt="Unidad SSD junto a la tarjeta madre de una laptop y un destornillador, lista para instalarse" width="800" height="600" loading="lazy">
+                <span class="visually-hidden"> (ampliar imagen)</span>
+              </a>
+              <figcaption>Cambio a SSD <span class="credito-foto">Foto: Samsung Memory / Unsplash · imagen ilustrativa</span></figcaption>
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="figura-galeria">
+              <a class="enlace-galeria" href="img/galeria-05-memoria-ram.webp" data-titulo="Memoria RAM para laptop" data-credito="Foto: Franck V. / Unsplash · imagen ilustrativa">
+                <img class="img-fluid" src="img/galeria-05-memoria-ram.webp" alt="Módulo de memoria RAM para laptop visto de cerca" width="800" height="600" loading="lazy">
+                <span class="visually-hidden"> (ampliar imagen)</span>
+              </a>
+              <figcaption>Memoria RAM para laptop <span class="credito-foto">Foto: Franck V. / Unsplash · imagen ilustrativa</span></figcaption>
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="figura-galeria">
+              <a class="enlace-galeria" href="img/galeria-06-camara-vigilancia.webp" data-titulo="Cámara de vigilancia" data-credito="Foto: Alan J. Hendry / Unsplash · imagen ilustrativa">
+                <img class="img-fluid" src="img/galeria-06-camara-vigilancia.webp" alt="Cámara de vigilancia blanca con antenas instalada en una pared" width="800" height="600" loading="lazy">
+                <span class="visually-hidden"> (ampliar imagen)</span>
+              </a>
+              <figcaption>Cámara de vigilancia <span class="credito-foto">Foto: Alan J. Hendry / Unsplash · imagen ilustrativa</span></figcaption>
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="figura-galeria">
+              <a class="enlace-galeria" href="img/galeria-07-modem-wifi.webp" data-titulo="Módem WiFi" data-credito="Foto: User_Pascal / Unsplash · imagen ilustrativa">
+                <img class="img-fluid" src="img/galeria-07-modem-wifi.webp" alt="Módem WiFi blanco sobre una mesa de madera, conectado con cable de red" width="800" height="600" loading="lazy">
+                <span class="visually-hidden"> (ampliar imagen)</span>
+              </a>
+              <figcaption>Módem WiFi <span class="credito-foto">Foto: User_Pascal / Unsplash · imagen ilustrativa</span></figcaption>
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="figura-galeria">
+              <a class="enlace-galeria" href="img/galeria-08-accesorios.webp" data-titulo="Accesorios para tu equipo" data-credito="Foto: Pakata Goh / Unsplash · imagen ilustrativa">
+                <img class="img-fluid" src="img/galeria-08-accesorios.webp" alt="Teclado, mouse, audífonos y celular acomodados sobre un escritorio" width="800" height="600" loading="lazy">
+                <span class="visually-hidden"> (ampliar imagen)</span>
+              </a>
+              <figcaption>Accesorios para tu equipo <span class="credito-foto">Foto: Pakata Goh / Unsplash · imagen ilustrativa</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECCIÓN: Contacto (RF-07 a RF-10, RF-12) ===== -->
+    <section id="contacto" class="seccion seccion-alterna" aria-labelledby="titulo-contacto">
+      <div class="container">
+        <div class="encabezado-seccion">
+          <h2 id="titulo-contacto" class="titulo-seccion">Contacto</h2>
+          <p class="frase-seccion">Cotiza sin compromiso: te respondemos por WhatsApp en horario de taller.</p>
+        </div>
+        <div class="row g-4 g-lg-5">
+          <div class="col-12 col-lg-7">
+            <div class="tarjeta-formulario">
+              <h3 id="titulo-formulario">Pide tu cotización</h3>
+              <p>Todos los campos son obligatorios.</p>
+              <noscript>
+                <p class="aviso-sin-js">Para enviar este formulario se necesita JavaScript. Escríbenos directo por <a href="https://wa.me/?text=Hola%20ByteFix%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar" target="_blank" rel="noopener">WhatsApp (se abre en otra pestaña)</a>.</p>
+              </noscript>
+              <form id="formulario-cotizacion" class="formulario-cotizacion" aria-labelledby="titulo-formulario" novalidate>
+                <div class="row g-3">
+                  <div class="col-12 col-md-6">
+                    <label class="form-label" for="campo-nombre">Nombre</label>
+                    <input class="form-control" type="text" id="campo-nombre" name="nombre" autocomplete="name" required minlength="2" maxlength="60" aria-describedby="error-nombre">
+                    <div class="mensaje-error" id="error-nombre"></div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label class="form-label" for="campo-whatsapp">WhatsApp</label>
+                    <input class="form-control" type="tel" id="campo-whatsapp" name="whatsapp" inputmode="tel" autocomplete="tel" required maxlength="16" aria-describedby="ayuda-whatsapp error-whatsapp">
+                    <p class="ayuda-campo" id="ayuda-whatsapp">A 10 dígitos, por ejemplo 238 000 0000.</p>
+                    <div class="mensaje-error" id="error-whatsapp"></div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label class="form-label" for="campo-equipo">Tipo de equipo</label>
+                    <select class="form-select" id="campo-equipo" name="equipo" required aria-describedby="error-equipo">
+                      <option value="">Elige una opción</option>
+                      <option value="Laptop">Laptop</option>
+                      <option value="PC de escritorio">PC de escritorio</option>
+                      <option value="Módem o red WiFi">Módem o red WiFi</option>
+                      <option value="Cámaras de vigilancia">Cámaras de vigilancia</option>
+                      <option value="Otro">Otro</option>
+                    </select>
+                    <div class="mensaje-error" id="error-equipo"></div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label class="form-label" for="campo-servicio">Servicio</label>
+                    <select class="form-select" id="campo-servicio" name="servicio" required aria-describedby="error-servicio">
+                      <option value="">Elige un servicio</option>
+                      <option value="Diagnóstico gratis">No sé, necesito diagnóstico (gratis)</option>
+                      <optgroup label="Software">
+                        <option value="Formateo e instalación de Windows">Formateo e instalación de Windows</option>
+                        <option value="Eliminación de virus y optimización">Eliminación de virus y optimización</option>
+                        <option value="Instalación de programas">Instalación de programas</option>
+                        <option value="Respaldo y recuperación de información">Respaldo y recuperación de información</option>
+                      </optgroup>
+                      <optgroup label="Hardware">
+                        <option value="Mantenimiento preventivo">Mantenimiento preventivo</option>
+                        <option value="Cambio a SSD">Cambio a SSD</option>
+                        <option value="Aumento de memoria RAM">Aumento de memoria RAM</option>
+                        <option value="Cambio de pantalla o teclado de laptop">Cambio de pantalla o teclado de laptop</option>
+                      </optgroup>
+                      <optgroup label="Redes y cámaras">
+                        <option value="Configuración de módem y WiFi">Configuración de módem y WiFi</option>
+                        <option value="Instalación de cámaras de vigilancia">Instalación de cámaras de vigilancia</option>
+                      </optgroup>
+                      <optgroup label="Accesorios">
+                        <option value="SSD 480 GB">SSD 480 GB</option>
+                        <option value="Memoria USB 64 GB">Memoria USB 64 GB</option>
+                        <option value="Mouse y teclados">Mouse y teclados</option>
+                        <option value="Cargadores para laptop">Cargadores para laptop</option>
+                        <option value="Laptops reacondicionadas">Laptops reacondicionadas</option>
+                      </optgroup>
+                    </select>
+                    <div class="mensaje-error" id="error-servicio"></div>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" for="campo-problema">¿Qué le pasa a tu equipo?</label>
+                    <textarea class="form-control" id="campo-problema" name="problema" rows="4" required minlength="10" maxlength="500" aria-describedby="error-problema"></textarea>
+                    <div class="mensaje-error" id="error-problema"></div>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg boton-pildora mt-4"><svg class="icono" aria-hidden="true"><use href="#icono-whatsapp"></use></svg> Enviar por WhatsApp</button>
+                <p class="nota-formulario">Se abrirá WhatsApp en otra pestaña con tu mensaje listo; solo tienes que enviarlo. Esta página no guarda tus datos.</p>
+                <div class="mensaje-confirmacion" id="confirmacion-formulario" role="status"></div>
+              </form>
+            </div>
+          </div>
+          <div class="col-12 col-lg-5">
+            <div class="tarjeta-contacto">
+              <h3>Escríbenos o llámanos</h3>
+              <address>
+                <ul class="lista-contacto">
+                  <li><a href="https://wa.me/?text=Hola%20ByteFix%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar" target="_blank" rel="noopener"><svg class="icono" aria-hidden="true"><use href="#icono-whatsapp"></use></svg> WhatsApp (número de demostración)<span class="visually-hidden"> (se abre en otra pestaña)</span></a></li>
+                  <li><span class="dato-contacto"><svg class="icono" aria-hidden="true"><use href="#icono-telephone"></use></svg> Teléfono de demostración</span></li>
+                  <!-- [DATO FICTICIO] S-14: correo de demostración (dominio reservado para ejemplos) -->
+                  <li><a href="mailto:contacto@bytefix.example"><svg class="icono" aria-hidden="true"><use href="#icono-envelope"></use></svg> contacto@bytefix.example</a></li>
+                </ul>
+              </address>
+              <p class="nota-formulario">Página de demostración: el número está desactivado. Los botones abren WhatsApp con el mensaje listo para que elijas el contacto; no se envía a nadie.</p>
+            </div>
+            <div class="tarjeta-contacto">
+              <h3>Visítanos</h3>
+              <!-- [DATO FICTICIO] S-03: dirección exacta ficticia -->
+              <address><span class="dato-contacto"><svg class="icono" aria-hidden="true"><use href="#icono-geo-alt"></use></svg> Av. Principal 12, Centro, San Mateo Tlacoxcalco, San José Miahuatlán, Puebla</span></address>
+              <!-- [DATO FICTICIO] S-15: horario -->
+              <ul class="horario">
+                <li><svg class="icono" aria-hidden="true"><use href="#icono-clock"></use></svg> Lunes a viernes: <time datetime="10:00">10:00</time> a <time datetime="19:00">19:00</time></li>
+                <li><svg class="icono" aria-hidden="true"><use href="#icono-clock"></use></svg> Sábado: <time datetime="10:00">10:00</time> a <time datetime="15:00">15:00</time></li>
+                <li><svg class="icono" aria-hidden="true"><use href="#icono-clock"></use></svg> Domingo: cerrado</li>
+              </ul>
+              <p class="nota-modalidad"><svg class="icono" aria-hidden="true"><use href="#icono-info-circle"></use></svg> <span>Atendemos en el taller: tú traes y recoges tu equipo. La instalación de redes y cámaras se hace en tu casa o negocio, con cita.</span></p>
+              <!-- [DATO FICTICIO] S-17: el mapa muestra solo la comunidad -->
+              <div class="mapa ratio ratio-16x9">
+                <iframe src="https://www.google.com/maps?q=San+Mateo+Tlacoxcalco,+Puebla&amp;output=embed" title="Mapa de San Mateo Tlacoxcalco, Puebla" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+              <a class="btn btn-outline-primary boton-pildora" href="https://www.google.com/maps/search/?api=1&amp;query=San+Mateo+Tlacoxcalco%2C+Puebla" target="_blank" rel="noopener"><svg class="icono" aria-hidden="true"><use href="#icono-geo-alt"></use></svg> Abrir en Google Maps<span class="visually-hidden"> (se abre en otra pestaña)</span> <svg class="icono" aria-hidden="true"><use href="#icono-box-arrow-up-right"></use></svg></a>
+            </div>
+            <div class="tarjeta-contacto">
+              <h3>Síguenos</h3>
+              <!-- [DATO FICTICIO] S-16: cuentas de demostración -->
+              <ul class="lista-contacto">
+                <li><a href="https://www.facebook.com/bytefix.smt" target="_blank" rel="noopener"><svg class="icono" aria-hidden="true"><use href="#icono-facebook"></use></svg> Facebook: @bytefix.smt<span class="visually-hidden"> (se abre en otra pestaña)</span></a></li>
+                <li><a href="https://www.instagram.com/bytefix.smt" target="_blank" rel="noopener"><svg class="icono" aria-hidden="true"><use href="#icono-instagram"></use></svg> Instagram: @bytefix.smt<span class="visually-hidden"> (se abre en otra pestaña)</span></a></li>
+                <li><a href="https://www.tiktok.com/@bytefix.tips" target="_blank" rel="noopener"><svg class="icono" aria-hidden="true"><use href="#icono-tiktok"></use></svg> TikTok: @bytefix.tips<span class="visually-hidden"> (se abre en otra pestaña)</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== SECCIÓN: Pie de página (RF-15, RF-17, RF-19) ===== -->
+  <footer class="pie">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <div class="col">
+          <a class="logo-pie" href="#inicio"><img src="img/logo.svg" alt="ByteFix, ir al inicio" width="180" height="48"></a>
+          <!-- [DATO FICTICIO] S-04 -->
+          <p>Tu equipo como nuevo, sin complicaciones.</p>
+        </div>
+        <div class="col">
+          <h2 class="titulo-pie">Secciones</h2>
+          <nav aria-label="Secciones del pie">
+            <ul class="lista-pie">
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#servicios">Servicios</a></li>
+              <li><a href="#promociones">Promociones</a></li>
+              <li><a href="#nosotros">Nosotros</a></li>
+              <li><a href="#galeria">Galería</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col">
+          <h2 class="titulo-pie">Contacto</h2>
+          <address>
+            <ul class="lista-pie">
+              <li><a href="https://wa.me/?text=Hola%20ByteFix%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar" target="_blank" rel="noopener"><svg class="icono" aria-hidden="true"><use href="#icono-whatsapp"></use></svg> WhatsApp (demostración)<span class="visually-hidden"> (se abre en otra pestaña)</span></a></li>
+              <li><span><svg class="icono" aria-hidden="true"><use href="#icono-telephone"></use></svg> Teléfono de demostración</span></li>
+              <li><a href="mailto:contacto@bytefix.example"><svg class="icono" aria-hidden="true"><use href="#icono-envelope"></use></svg> contacto@bytefix.example</a></li>
+            </ul>
+          </address>
+          <!-- [DATO FICTICIO] S-15 -->
+          <p>Lunes a viernes de 10:00 a 19:00 · Sábado de 10:00 a 15:00 · Domingo cerrado</p>
+        </div>
+        <div class="col">
+          <h2 class="titulo-pie">Síguenos</h2>
+          <ul class="lista-pie">
+            <li><a href="https://www.facebook.com/bytefix.smt" target="_blank" rel="noopener"><svg class="icono" aria-hidden="true"><use href="#icono-facebook"></use></svg> Facebook<span class="visually-hidden"> (se abre en otra pestaña)</span></a></li>
+            <li><a href="https://www.instagram.com/bytefix.smt" target="_blank" rel="noopener"><svg class="icono" aria-hidden="true"><use href="#icono-instagram"></use></svg> Instagram<span class="visually-hidden"> (se abre en otra pestaña)</span></a></li>
+            <li><a href="https://www.tiktok.com/@bytefix.tips" target="_blank" rel="noopener"><svg class="icono" aria-hidden="true"><use href="#icono-tiktok"></use></svg> TikTok<span class="visually-hidden"> (se abre en otra pestaña)</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="separador-pie">
+      <!-- Aviso obligatorio de datos ficticios (regla 5.3, RF-15, S-01) -->
+      <p class="aviso-ficticio">ByteFix es una empresa ficticia. Datos, precios e imágenes son ilustrativos.</p>
+      <p class="creditos-pie">Foto principal: Revendo / Unsplash; las demás fotos llevan su crédito en la galería. Tipografías Baloo 2 y Atkinson Hyperlegible (SIL OFL). Íconos de Bootstrap Icons (MIT).</p>
+      <p class="mb-0">© <span id="anio-actual">2026</span> ByteFix · San Mateo Tlacoxcalco, Puebla</p>
+    </div>
+  </footer>
+
+  <!-- ===== SECCIÓN: Elementos fijos y modal (RF-05, RF-11, RF-16) ===== -->
+  <aside class="accesos-rapidos" aria-label="Accesos rápidos">
+    <a class="boton-whatsapp-flotante" href="https://wa.me/?text=Hola%20ByteFix%2C%20vi%20su%20p%C3%A1gina%20y%20quiero%20cotizar" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp (se abre en otra pestaña)"><svg class="icono" aria-hidden="true"><use href="#icono-whatsapp"></use></svg></a>
+    <button type="button" class="boton-volver-arriba" aria-label="Volver arriba" hidden><svg class="icono" aria-hidden="true"><use href="#icono-arrow-up"></use></svg></button>
+  </aside>
+
+  <div class="modal fade" id="modal-galeria" tabindex="-1" role="dialog" aria-labelledby="titulo-modal-galeria" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="titulo-modal-galeria">Imagen de la galería</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <img class="imagen-modal" src="img/galeria-01-taller.webp" alt="" width="800" height="600" loading="lazy">
+          <p class="credito-modal"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-primary boton-pildora" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1066 @@
+/* ==========================================================================
+   ByteFix · styles.css
+   Estilos propios. Se cargan después de Bootstrap 5.3.8 y solo lo
+   personalizan con sus variables CSS; el archivo de Bootstrap no se edita.
+   Orden: variables → base → encabezado → secciones → pie → utilidades →
+   movimiento reducido. Mobile-first (Fase 4, docs/fase4_…md).
+   ========================================================================== */
+
+
+/* ===== 1. Variables (paleta, tipografías, espaciado, radios y sombras) ===== */
+:root {
+  /* Paleta (Fase 4, sección 2; contraste verificado con WebAIM) */
+  --color-primario: #6D28D9;
+  --color-primario-oscuro: #5B21B6;
+  --color-primario-activo: #4C1D95;
+  --color-primario-claro: #EDE9FE;
+  --color-secundario: #06B6D4;
+  --color-secundario-texto: #0E7490;
+  --color-secundario-claro: #CFFAFE;
+  --color-acento: #FACC15;
+  --color-acento-claro: #FEF9C3;
+  --color-texto: #1E1B2E;
+  --color-texto-suave: #4A4560;
+  --color-fondo: #FFFFFF;
+  --color-fondo-alterno: #F5F3FF;
+  --color-fondo-cian: #ECFEFF;
+  --color-borde: #DDD6FE;
+  --color-borde-campo: #6E6787;
+  --color-exito: #15803D;
+  --color-exito-claro: #DCFCE7;
+  --color-exito-texto: #166534;
+  --color-error: #B91C1C;
+  --color-aviso-texto: #854D0E;
+  --color-neutro-claro: #F1F5F9;
+  --color-neutro-texto: #475569;
+  --color-pie-enlace: #C4B5FD;
+  --color-whatsapp: #25D366;
+  --color-whatsapp-icono: #0B3D20;
+
+  /* Tipografías (D-22) */
+  --fuente-titulos: "Baloo 2", "Trebuchet MS", system-ui, sans-serif;
+  --fuente-texto: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Espaciado, radios y sombras (Fase 4, sección 4) */
+  --espacio-seccion: 3rem;
+  --alto-encabezado: 4.75rem;
+  --radio-tarjeta: 1rem;
+  --radio-boton: 50rem;
+  --radio-campo: 0.75rem;
+  --sombra-tarjeta: 0 0.5rem 1.5rem rgba(76, 29, 149, 0.12);
+  --sombra-elevada: 0 0.75rem 2rem rgba(76, 29, 149, 0.18);
+
+  /* Variables globales de Bootstrap */
+  --bs-primary: #6D28D9;
+  --bs-primary-rgb: 109, 40, 217;
+  --bs-body-font-family: var(--fuente-texto);
+  --bs-body-font-size: 1rem;
+  --bs-body-line-height: 1.6;
+  --bs-body-color: var(--color-texto);
+  --bs-body-bg: var(--color-fondo);
+  --bs-heading-color: var(--color-texto);
+  --bs-link-color: var(--color-primario);
+  --bs-link-color-rgb: 109, 40, 217;
+  --bs-link-hover-color: var(--color-primario-oscuro);
+  --bs-link-hover-color-rgb: 91, 33, 182;
+  --bs-border-radius: var(--radio-campo);
+  --bs-focus-ring-color: rgba(109, 40, 217, 0.35);
+}
+
+/* Botón principal (variables de componente de Bootstrap) */
+.btn-primary {
+  --bs-btn-color: #FFFFFF;
+  --bs-btn-bg: var(--color-primario);
+  --bs-btn-border-color: var(--color-primario);
+  --bs-btn-hover-color: #FFFFFF;
+  --bs-btn-hover-bg: var(--color-primario-oscuro);
+  --bs-btn-hover-border-color: var(--color-primario-oscuro);
+  --bs-btn-active-color: #FFFFFF;
+  --bs-btn-active-bg: var(--color-primario-activo);
+  --bs-btn-active-border-color: var(--color-primario-activo);
+  --bs-btn-focus-shadow-rgb: 109, 40, 217;
+}
+
+/* Botón secundario con contorno */
+.btn-outline-primary {
+  --bs-btn-color: var(--color-primario);
+  --bs-btn-border-color: var(--color-primario);
+  --bs-btn-hover-color: #FFFFFF;
+  --bs-btn-hover-bg: var(--color-primario);
+  --bs-btn-hover-border-color: var(--color-primario);
+  --bs-btn-active-color: #FFFFFF;
+  --bs-btn-active-bg: var(--color-primario-oscuro);
+  --bs-btn-active-border-color: var(--color-primario-oscuro);
+  --bs-btn-focus-shadow-rgb: 109, 40, 217;
+  --bs-btn-bg: var(--color-fondo);
+}
+
+/* Acordeón de "Información importante" (E5) */
+.acordeon-info {
+  --bs-accordion-border-color: var(--color-borde);
+  --bs-accordion-border-radius: var(--radio-tarjeta);
+  --bs-accordion-inner-border-radius: calc(var(--radio-tarjeta) - 1px);
+  --bs-accordion-btn-color: var(--color-texto);
+  --bs-accordion-active-color: var(--color-primario-oscuro);
+  --bs-accordion-active-bg: var(--color-primario-claro);
+  --bs-accordion-btn-focus-box-shadow: none;
+}
+
+
+/* ===== 2. Base ===== */
+html {
+  scroll-padding-top: var(--alto-encabezado);
+}
+
+body {
+  font-family: var(--fuente-texto);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--fuente-titulos);
+  color: var(--color-texto);
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+h3 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+p {
+  max-width: 70ch;
+}
+
+/* Íconos SVG de Bootstrap Icons (D-25): toman el tamaño y el color del texto */
+.icono {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  fill: currentColor;
+}
+
+.sprite-iconos {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Foco visible en todos los elementos (7.10): nunca se quita el contorno */
+:focus-visible {
+  outline: 3px solid var(--color-primario);
+  outline-offset: 3px;
+}
+
+.btn:focus-visible,
+.nav-link:focus-visible,
+.navbar-toggler:focus-visible,
+.btn-close:focus-visible,
+.accordion-button:focus-visible {
+  outline: 3px solid var(--color-primario);
+  outline-offset: 3px;
+  box-shadow: none;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--color-primario);
+  outline: 3px solid var(--color-primario);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+.seccion {
+  padding-block: var(--espacio-seccion);
+}
+
+.seccion-alterna {
+  background-color: var(--color-fondo-alterno);
+}
+
+.encabezado-seccion {
+  margin-bottom: 2rem;
+}
+
+.titulo-seccion {
+  margin-bottom: 0.75rem;
+}
+
+/* Barrita de color bajo cada título de sección: las "patitas" del chip */
+.titulo-seccion::after {
+  content: "";
+  display: block;
+  width: 4rem;
+  height: 0.375rem;
+  margin-top: 0.5rem;
+  border-radius: var(--radio-boton);
+  background: linear-gradient(90deg, var(--color-secundario) 0 50%, var(--color-acento) 50% 100%);
+}
+
+.frase-seccion {
+  font-size: 1.125rem;
+  color: var(--color-texto-suave);
+  margin-bottom: 0;
+}
+
+/* Botones en forma de píldora con área táctil de 44 px o más */
+.boton-pildora {
+  --bs-btn-border-radius: var(--radio-boton);
+  --bs-btn-border-width: 2px;
+  --bs-btn-padding-x: 1.25rem;
+  --bs-btn-padding-y: 0.5rem;
+  --bs-btn-font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+}
+
+.precio {
+  font-family: var(--fuente-titulos);
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--color-primario);
+  margin-bottom: 0.75rem;
+}
+
+.precio-extra {
+  font-family: var(--fuente-texto);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-texto-suave);
+}
+
+
+/* ===== 3. Encabezado y navegación ===== */
+.encabezado {
+  background-color: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid var(--color-borde);
+  box-shadow: 0 0.25rem 1rem rgba(76, 29, 149, 0.08);
+}
+
+.navbar {
+  --bs-navbar-color: var(--color-texto);
+  --bs-navbar-hover-color: var(--color-primario);
+  --bs-navbar-active-color: var(--color-primario);
+  --bs-navbar-padding-y: 0.75rem;
+}
+
+.navbar-brand img {
+  display: block;
+  width: 9.375rem;
+  height: auto;
+}
+
+.navbar-nav {
+  padding-block: 0.5rem;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 700;
+  padding-block: 0.625rem;
+  border-radius: var(--radio-campo);
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--color-primario);
+  background-color: var(--color-primario-claro);
+}
+
+.boton-menu {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 1.5rem;
+  color: var(--color-primario);
+  border: 2px solid var(--color-primario);
+  border-radius: var(--radio-campo);
+}
+
+.boton-menu .icono-cerrar,
+.boton-menu[aria-expanded="true"] .icono-abrir {
+  display: none;
+}
+
+.boton-menu[aria-expanded="true"] .icono-cerrar {
+  display: inline-block;
+}
+
+.boton-menu-cta {
+  width: 100%;
+  margin-bottom: 0.75rem;
+}
+
+
+/* ===== 4. Inicio ===== */
+.seccion-inicio {
+  padding-block: 2rem var(--espacio-seccion);
+  background: linear-gradient(135deg, var(--color-fondo-alterno), var(--color-fondo-cian));
+}
+
+.frase-gancho {
+  font-weight: 700;
+  color: var(--color-primario-oscuro);
+  margin-bottom: 0.5rem;
+}
+
+.titulo-principal {
+  margin-bottom: 0.75rem;
+}
+
+.eslogan {
+  font-size: 1.125rem;
+  margin-bottom: 1.25rem;
+}
+
+.acciones-inicio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.lista-beneficios {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.lista-beneficios li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+}
+
+.icono-circulo {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  color: var(--color-primario-oscuro);
+  background-color: var(--color-primario-claro);
+}
+
+.figura-inicio {
+  margin-bottom: 0;
+}
+
+.figura-inicio img {
+  border-radius: var(--radio-tarjeta);
+  box-shadow: var(--sombra-elevada);
+}
+
+.figura-inicio figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-texto-suave);
+}
+
+
+/* ===== 5. Servicios y precios ===== */
+.aviso-diagnostico {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 2px solid var(--color-acento);
+  border-radius: var(--radio-tarjeta);
+  background-color: var(--color-acento-claro);
+}
+
+.aviso-diagnostico h3 {
+  margin-bottom: 0;
+}
+
+.aviso-diagnostico p {
+  margin-bottom: 0;
+}
+
+.acciones-aviso {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+}
+
+.filtro-catalogo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.boton-filtro[aria-pressed="true"] {
+  --bs-btn-color: var(--color-primario-oscuro);
+  --bs-btn-bg: var(--color-primario-claro);
+  --bs-btn-border-color: var(--color-primario-oscuro);
+  --bs-btn-hover-color: var(--color-primario-oscuro);
+  --bs-btn-hover-bg: var(--color-primario-claro);
+}
+
+.contador-servicios {
+  font-size: 0.875rem;
+  color: var(--color-texto-suave);
+  margin-bottom: 1.5rem;
+}
+
+.categoria-catalogo {
+  margin-bottom: 2.5rem;
+}
+
+.titulo-categoria {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.nota-categoria {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: var(--color-secundario-texto);
+  margin-bottom: 1rem;
+}
+
+.card {
+  --bs-card-border-color: var(--color-borde);
+  --bs-card-border-radius: var(--radio-tarjeta);
+  --bs-card-inner-border-radius: calc(var(--radio-tarjeta) - 1px);
+  --bs-card-cap-bg: transparent;
+}
+
+.tarjeta-servicio,
+.tarjeta-promocion {
+  box-shadow: var(--sombra-tarjeta);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-servicio:hover,
+.tarjeta-promocion:hover {
+  transform: translateY(-0.125rem);
+  box-shadow: var(--sombra-elevada);
+}
+
+.tarjeta-servicio .card-footer,
+.tarjeta-promocion .card-footer {
+  border-top: 0;
+  padding-top: 0;
+  padding-bottom: 1.25rem;
+}
+
+.etiqueta-categoria {
+  display: inline-block;
+  padding: 0.125rem 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-texto);
+  border-radius: var(--radio-boton);
+  background-color: var(--color-secundario-claro);
+}
+
+.descripcion-servicio {
+  color: var(--color-texto-suave);
+  margin-bottom: 0;
+}
+
+.nota-negocios {
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+.nota-precios {
+  font-size: 0.875rem;
+  color: var(--color-texto-suave);
+  margin-bottom: 0;
+}
+
+
+/* ===== 6. Promociones ===== */
+.tarjeta-promocion .card-title {
+  margin-bottom: 0.5rem;
+}
+
+.estado-promocion {
+  --bs-badge-font-size: 0.875rem;
+  --bs-badge-padding-x: 0.75rem;
+  --bs-badge-padding-y: 0.375rem;
+  --bs-badge-border-radius: var(--radio-boton);
+  --bs-badge-font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.estado-vigente {
+  --bs-badge-color: var(--color-exito-texto);
+  background-color: var(--color-exito-claro);
+}
+
+.estado-proximamente {
+  --bs-badge-color: var(--color-aviso-texto);
+  background-color: var(--color-acento-claro);
+}
+
+.estado-vencida {
+  --bs-badge-color: var(--color-neutro-texto);
+  background-color: var(--color-neutro-claro);
+}
+
+.promocion-vencida {
+  border-style: dashed;
+}
+
+.precio-anterior {
+  color: var(--color-texto-suave);
+  margin-bottom: 0.5rem;
+}
+
+.condiciones,
+.vigencia {
+  margin-bottom: 0.5rem;
+}
+
+.vigencia {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.9375rem;
+  color: var(--color-texto-suave);
+}
+
+.bloque-info {
+  margin-top: 3rem;
+}
+
+.acordeon-info .accordion-header {
+  margin-bottom: 0;
+}
+
+.acordeon-info .accordion-button {
+  gap: 0.75rem;
+  font-family: var(--fuente-texto);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  min-height: 3.25rem;
+}
+
+
+/* ===== 7. Nosotros ===== */
+.datos-rapidos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.dato-rapido {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 1rem;
+  font-weight: 700;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-boton);
+  background-color: var(--color-fondo);
+}
+
+.tarjeta-filosofia {
+  border-top: 0.375rem solid var(--color-secundario);
+  box-shadow: var(--sombra-tarjeta);
+}
+
+.subtitulo-nosotros {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.lista-valores,
+.lista-diferenciadores {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.valor {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: var(--radio-tarjeta);
+  background-color: var(--color-fondo);
+  box-shadow: var(--sombra-tarjeta);
+}
+
+.valor strong {
+  font-family: var(--fuente-titulos);
+  font-size: 1.125rem;
+}
+
+.valor span {
+  color: var(--color-texto-suave);
+}
+
+.lista-diferenciadores li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.lista-diferenciadores .icono {
+  color: var(--color-exito);
+  font-size: 1.25rem;
+  margin-top: 0.125rem;
+}
+
+
+/* ===== 8. Galería ===== */
+.figura-galeria {
+  margin-bottom: 0;
+}
+
+.enlace-galeria {
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radio-tarjeta);
+  box-shadow: var(--sombra-tarjeta);
+}
+
+.enlace-galeria img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.enlace-galeria:hover img {
+  transform: scale(1.04);
+}
+
+.figura-galeria figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.credito-foto {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--color-texto-suave);
+}
+
+.imagen-modal {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radio-campo);
+}
+
+.credito-modal {
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  color: var(--color-texto-suave);
+}
+
+.modal-title {
+  font-size: 1.375rem;
+}
+
+
+/* ===== 9. Contacto ===== */
+.tarjeta-formulario,
+.tarjeta-contacto {
+  padding: 1.5rem;
+  border-radius: var(--radio-tarjeta);
+  background-color: var(--color-fondo);
+  box-shadow: var(--sombra-tarjeta);
+}
+
+.tarjeta-contacto + .tarjeta-contacto {
+  margin-top: 1.5rem;
+}
+
+.form-label {
+  font-weight: 700;
+}
+
+.form-control,
+.form-select {
+  min-height: 2.75rem;
+  border-color: var(--color-borde-campo);
+  border-radius: var(--radio-campo);
+}
+
+.form-control[aria-invalid="true"],
+.form-select[aria-invalid="true"] {
+  border: 2px solid var(--color-error);
+}
+
+.ayuda-campo {
+  font-size: 0.875rem;
+  color: var(--color-texto-suave);
+  margin-top: 0.25rem;
+  margin-bottom: 0;
+}
+
+.mensaje-error {
+  margin-top: 0.375rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-error);
+}
+
+.mensaje-error:empty {
+  display: none;
+}
+
+.mensaje-confirmacion {
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem;
+  font-weight: 700;
+  color: var(--color-exito-texto);
+  border: 2px solid var(--color-exito);
+  border-radius: var(--radio-tarjeta);
+  background-color: var(--color-exito-claro);
+}
+
+.mensaje-confirmacion:empty {
+  display: none;
+}
+
+.nota-formulario {
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  color: var(--color-texto-suave);
+}
+
+.aviso-sin-js {
+  padding: 1rem;
+  border-radius: var(--radio-tarjeta);
+  background-color: var(--color-acento-claro);
+}
+
+.lista-contacto {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.lista-contacto li + li {
+  margin-top: 0.25rem;
+}
+
+.lista-contacto a,
+.dato-contacto {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 2.75rem;
+  font-weight: 700;
+}
+
+.lista-contacto .icono,
+.dato-contacto .icono {
+  font-size: 1.25rem;
+}
+
+.tarjeta-contacto address {
+  margin-bottom: 0;
+}
+
+.horario {
+  list-style: none;
+  padding-left: 0;
+  margin-block: 0.75rem;
+}
+
+.nota-modalidad {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-weight: 700;
+  color: var(--color-secundario-texto);
+}
+
+.mapa {
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+  border-radius: var(--radio-tarjeta);
+}
+
+.mapa iframe {
+  border: 0;
+}
+
+
+/* ===== 10. Pie de página ===== */
+.pie {
+  padding-block: 3rem 6rem;
+  color: #FFFFFF;
+  background-color: var(--color-texto);
+}
+
+.pie a {
+  color: var(--color-pie-enlace);
+}
+
+.pie a:hover {
+  color: #FFFFFF;
+}
+
+.pie :focus-visible {
+  outline-color: var(--color-acento);
+}
+
+.logo-pie {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.75rem;
+  border-radius: var(--radio-boton);
+  background-color: #FFFFFF;
+}
+
+.logo-pie img {
+  display: block;
+  width: 9.375rem;
+  height: auto;
+}
+
+.titulo-pie {
+  font-size: 1.125rem;
+  color: #FFFFFF;
+  margin-bottom: 0.75rem;
+}
+
+.lista-pie {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.lista-pie a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+}
+
+.pie address {
+  margin-bottom: 0.5rem;
+}
+
+.separador-pie {
+  margin-block: 2rem 1.5rem;
+  border-color: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+}
+
+.aviso-ficticio {
+  padding-left: 0.75rem;
+  font-weight: 700;
+  border-left: 0.25rem solid var(--color-acento);
+}
+
+.creditos-pie {
+  font-size: 0.875rem;
+}
+
+
+/* ===== 11. Utilidades: enlace para saltar, botones fijos ===== */
+.enlace-saltar:focus {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 1100;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  border-radius: var(--radio-campo);
+  background-color: var(--color-primario);
+}
+
+.boton-whatsapp-flotante,
+.boton-volver-arriba {
+  position: fixed;
+  right: 1rem;
+  z-index: 1030;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: var(--sombra-elevada);
+  transition: transform 0.2s ease;
+}
+
+.boton-whatsapp-flotante {
+  bottom: 1rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  font-size: 1.75rem;
+  color: var(--color-whatsapp-icono);
+  background-color: var(--color-whatsapp);
+}
+
+.boton-whatsapp-flotante:hover {
+  color: var(--color-whatsapp-icono);
+  transform: scale(1.06);
+}
+
+.boton-volver-arriba {
+  bottom: 5.25rem;
+  right: 1.25rem;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.25rem;
+  color: var(--color-primario);
+  border: 2px solid var(--color-primario);
+  background-color: var(--color-fondo);
+}
+
+.boton-volver-arriba:hover {
+  color: #FFFFFF;
+  background-color: var(--color-primario);
+}
+
+
+/* ===== 12. Ajustes por tamaño de pantalla (mobile-first) ===== */
+@media (min-width: 768px) {
+  .aviso-diagnostico {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .acciones-aviso {
+    flex-shrink: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  :root {
+    --espacio-seccion: 5rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+  }
+
+  .seccion-inicio {
+    padding-block: 4rem var(--espacio-seccion);
+  }
+
+  .eslogan {
+    font-size: 1.25rem;
+  }
+
+  .navbar-nav {
+    padding-block: 0;
+  }
+
+  .navbar-nav .nav-link {
+    padding-inline: 0.625rem;
+  }
+
+  .boton-menu-cta {
+    width: auto;
+    margin-bottom: 0;
+    margin-left: 0.75rem;
+  }
+
+  .pie {
+    padding-bottom: 3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navbar-brand img {
+    width: 11.25rem;
+  }
+
+  .navbar-nav .nav-link {
+    padding-inline: 0.875rem;
+  }
+}
+
+
+/* ===== 13. Movimiento reducido (7.10) ===== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .tarjeta-servicio,
+  .tarjeta-promocion,
+  .enlace-galeria img,
+  .boton-whatsapp-flotante,
+  .boton-volver-arriba {
+    transition: none;
+  }
+
+  .tarjeta-servicio:hover,
+  .tarjeta-promocion:hover,
+  .enlace-galeria:hover img,
+  .boton-whatsapp-flotante:hover {
+    transform: none;
+  }
+}
